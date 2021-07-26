@@ -4,6 +4,7 @@
 	font-family: 'PT Sans', sans-serif;
     font-size: 18px;
     line-height: 141.69%;
+    font-weight: 700;
     color: #ffffff;
 	background-color: $yellowColor;
 	padding: 12px 45px;
@@ -11,6 +12,7 @@
 	@media (any-hover: hover) {
         &:hover {
             background-color: $orangeColor;
+            color: #fff;
         }
     }
 }
