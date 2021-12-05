@@ -1,5 +1,146 @@
-footer{}
 //====================================================================================================
+.footer {
+    padding: 55px 0 45px 0;
+    background-color: $mainColor;
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        color: #fff;
+    }
+    &__main {
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        max-width: 190px;
+        margin-right: 25px;
+        margin-bottom: 30px;
+        @media (max-width: $md4+px) {
+            margin: 0 auto;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+    }
+    &__logo {
+        margin-bottom: 30px;
+        img {
+            width: 165px;
+            height: 90px;
+        }
+    }
+    &__text {
+        font-size: 11px;
+        line-height: 13px;
+        margin-bottom: 28px;
+    }
+    &__text-copy {
+        font-size: 10px;
+        line-height: 160%;
+        color: #b5b5b5;
+    }
+    &__copy-box {
+        width: 100%;
+        text-align: center;
+        @media (max-width: $md4+px) {
+            margin-top: 30px;
+        }
+    }
+}
+
+.menu-footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    &__title {
+        margin-bottom: 15px;
+    }
+    &__column {
+        max-width: 190px;
+        &:not(:last-child) {
+            @include adaptiv-value("margin-right", 60, 25, 1);
+        }
+    }
+    &__list {
+        li {
+            &:not(:last-child) {
+                margin-bottom: 7px;
+            }
+            margin-bottom: 15px;
+        }
+    }
+    &__link {
+        font-size: 12px;
+        line-height: 15px;
+        color: #fff;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: #b5b5b5;
+            }
+        }
+    }
+}
+
+.subscribe {
+    max-width: 170px;
+    margin-bottom: 30px;
+    @media (max-width: $md4+px) {
+        margin: 0 auto;
+    }
+    &__btn {
+        background-color: #fff;
+        font-size: 15px;
+        color: #000;
+        padding: 11px 22px;
+        margin-bottom: 22px;
+    }
+}
+
+.social-subscribe {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__link {
+        svg {
+            transition: all 0.4s ease 0s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                svg {
+                    transform: rotate(360deg);
+                    path {
+                        fill: aqua;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contact-footer {
+    @media (max-width: $md4+px) {
+        display: none;
+    }
+    &__title {
+        margin-bottom: 15px;
+    }
+    &__numbers {
+        display: flex;
+        flex-direction: column;
+    }
+    &__phone {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 156.69%;
+        color: #fff;
+        transition: color 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                color: #b5b5b5;
+            }
+        }
+    }
+}
 
 //====================================================================================================
-

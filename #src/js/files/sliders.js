@@ -61,63 +61,144 @@ if (sliderScrollItems.length > 0) {
 
 function sliders_bild_callback(params) { }
 
-let slider_about = new Swiper('.about__slider', {
-	/*
-	effect: 'fade',
-	autoplay: {
-		delay: 3000,
-		disableOnInteraction: false,
-	},
-	*/
+function addZero(num){
+	return (num > 9) ? num : '0' + num;
+}
+
+let slider_main = new Swiper('.slider-main__body', {
 	observer: true,
 	observeParents: true,
 	slidesPerView: 1,
 	spaceBetween: 0,
 	autoHeight: true,
 	speed: 800,
-	//touchRatio: 0,
-	//simulateTouch: false,
-	//loop: true,
-	//preloadImages: false,
-	//lazy: true,
-	// Dotts
-	//pagination: {
-	//	el: '.slider-quality__pagging',
-	//	clickable: true,
-	//},
-	// Arrows
-	navigation: {
-		nextEl: '.about__more .more__item_next',
-		prevEl: '.about__more .more__item_prev',
-	},
-	/*
+	loop: true,
 	breakpoints: {
-		320: {
-			slidesPerView: 1,
-			spaceBetween: 0,
-			autoHeight: true,
-		},
 		768: {
-			slidesPerView: 2,
-			spaceBetween: 20,
-		},
-		992: {
-			slidesPerView: 3,
-			spaceBetween: 20,
-		},
-		1268: {
-			slidesPerView: 4,
-			spaceBetween: 30,
+			navigation: {
+				nextEl: '.main-slider__body .slider-arrow_next',
+				prevEl: '.main-slider__body .slider-arrow_prev',
+			},
+			pagination: {
+				el: '.slider-main__pagination',
+				type: 'fraction',
+				formatFractionCurrent: addZero,
+				formatFractionTotal: addZero
+			},
 		},
 	},
-	*/
 	on: {
 		lazyImageReady: function () {
 			ibg();
 		},
 	}
-	// And if we need scrollbar
-	//scrollbar: {
-	//	el: '.swiper-scrollbar',
-	//},
+});
+
+let sliderTehniqueImg = new Swiper('.image-technique__slider', {
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1,
+	spaceBetween: 0,
+	effect: "fade",
+	autoHeight: false,
+	speed: 800,
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
+});
+
+let sliderTehniqueText = new Swiper('.text-technique__slider', {
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1,
+	spaceBetween: 0,
+	autoHeight: false,
+	speed: 800,
+	breakpoints: {
+		768: {
+			navigation: {
+				nextEl: '.sliders-technique__arrows .slider-arrow_next',
+				prevEl: '.sliders-technique__arrows .slider-arrow_prev',
+			},
+		},
+	},
+	scrollbar: {
+		el: ".sliders-technique__scrollbar",
+		draggable: true,
+	},
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
+});
+
+sliderTehniqueImg.controller.control = sliderTehniqueText;
+sliderTehniqueText.controller.control = sliderTehniqueImg;
+
+let readyProjectSlidertop = new Swiper('.readyproject__slidertop', {
+	observer: true,
+	observeParents: true,
+	slidesPerView: 8,
+	spaceBetween: 30,
+	autoHeight: false,
+	freeMode: true,
+	watchSlidesProgress: true,
+	speed: 800,
+	breakpoints: {
+		320: {
+			slidesPerView: 1.5,
+		},
+		370: {
+			slidesPerView: 2,
+		},
+		480:{
+			slidesPerView: 3,
+		},
+		640:{
+			slidesPerView: 4,
+		},
+		768: {
+			slidesPerView: 5,
+		},
+		992: {
+			slidesPerView: 8,
+		},
+	},
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
+});
+
+let readyProjectSliderbig = new Swiper('.readyproject__sliderbig', {
+	observer: true,
+	observeParents: true,
+	slidesPerView: 1,
+	spaceBetween: 0,
+	autoHeight: false,
+	speed: 800,
+	breakpoints: {
+		768: {
+			navigation: {
+				nextEl: '.readyproject__slidertop-arrows .slider-arrow_next',
+				prevEl: '.readyproject__slidertop-arrows .slider-arrow_prev',
+			},
+		},
+	},
+	scrollbar: {
+		el: ".readyproject__slidertop-scrollbar",
+		draggable: true,
+	},
+	thumbs: {
+		swiper: readyProjectSlidertop,
+	},
+	on: {
+		lazyImageReady: function () {
+			ibg();
+		},
+	}
 });

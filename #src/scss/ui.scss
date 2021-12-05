@@ -1,15 +1,15 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 
 .btn {
-	font-family: 'PT Sans', sans-serif;
+    font-family: "PT Sans", sans-serif;
     font-size: 18px;
     line-height: 141.69%;
     font-weight: 700;
     color: #ffffff;
-	background-color: $yellowColor;
-	padding: 12px 45px;
-	transition: background-color 0.3s ease 0s;
-	@media (any-hover: hover) {
+    background-color: $yellowColor;
+    padding: 12px 45px;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
         &:hover {
             background-color: $orangeColor;
             color: #fff;
@@ -18,9 +18,61 @@
 }
 
 .btn-transparent {
-	background-color: transparent;
-	color: $mainColor;
-	border: 1px solid $yellowColor;
+    background-color: transparent;
+    color: $mainColor;
+    border: 1px solid $yellowColor;
+}
+
+.title {
+    font-family: 'PT Sans', sans-serif;
+    color: $mainColor;
+    font-weight: 700;
+    @include adaptiv-value('font-size', 40, 30, 1);
+    line-height: 141.69%;
+    span {
+        color: $yellowColor;
+    }
+}
+
+._footer-title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 15px;
+    color: #fff;
+}
+
+.sliders-technique__arrows,
+.readyproject__slidertop-arrows {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 25px;
+    @media (max-width: $md3+px) {
+        display: none;
+    }
+    .slider-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid $yellowColor;
+        svg {
+            position: relative;
+            margin-left: -30px;
+            z-index: 2;
+        }
+    }
+    .slider-arrow_prev {
+        transform: rotate(-180deg);
+        margin-right: 30px;
+    }
+    .swiper-button-disabled {
+        border: 0px solid $yellowColor;
+        svg {
+            opacity: 0.7;
+        }
+    }
 }
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
